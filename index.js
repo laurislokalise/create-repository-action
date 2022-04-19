@@ -8,11 +8,6 @@ async function run() {
     const accessToken = core.getInput('access-token');
 
     const endpoint = org ? `/orgs/${org}/repos` : '/user/repos'
-
-    core.info(`Name: ${name}`);
-    core.info(`Org: ${org}`);
-    core.info(`Endpoint: ${endpoint}`);
-
     axios.post(
       'https://api.github.com' + endpoint,
       {
@@ -28,9 +23,9 @@ async function run() {
     ).then((repository) => {
       core.info('Repository created: ' + repository.data.html_url);
       core.setOutput('id', repository.data.node_id);
-    }).catch((error) => {
+    }).catch(() => {
+      core.info('Repository already exists.');
       core.setOutput('id', null);
-      core.setFailed(error);
     })
   } catch (error) {
     core.setFailed(error.message);
