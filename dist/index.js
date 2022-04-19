@@ -5992,9 +5992,9 @@ async function run() {
     ).then((repository) => {
       core.info('Repository created: ' + repository.data.html_url);
       core.setOutput('id', repository.data.node_id);
-    }).catch((e) => {
-      core.error(`Error when creating a repository: ${JSON.stringify(e)}`);
+    }).catch((error) => {
       core.setOutput('id', null);
+      core.setFailed(error);
     })
   } catch (error) {
     core.setFailed(error.message);
