@@ -26,6 +26,7 @@ async function run() {
     }).catch((e) => {
       core.error(`Error when creating a repository: ${JSON.stringify(e)}`);
       core.setOutput('id', null);
+      process.exit(1);
     })
   } catch (error) {
     core.setFailed(error.message);
