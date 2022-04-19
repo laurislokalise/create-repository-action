@@ -5977,6 +5977,11 @@ async function run() {
     const accessToken = core.getInput('access-token');
 
     const endpoint = org ? `/orgs/${org}/repos` : '/user/repos'
+
+    core.info(`Name: ${name}`);
+    core.info(`Org: ${org}`);
+    core.info(`Endpoint: ${endpoint}`);
+
     axios.post(
       'https://api.github.com' + endpoint,
       {
