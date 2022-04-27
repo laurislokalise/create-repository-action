@@ -8,27 +8,18 @@
     "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
     "all": "npm run lint && npm run prepare"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/octobay/create-repository-action.git"
-  },
   "keywords": [
     "GitHub",
     "Actions",
     "JavaScript"
   ],
-  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/octobay/create-repository-action/issues"
-  },
-  "homepage": "https://github.com/octobay/create-repository-action#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "axios": "^0.26.1"
+    "@actions/core": "^1.7.0",
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.4",
-    "eslint": "^8.13.0"
+    "eslint": "^8.14.0"
   }
 }
