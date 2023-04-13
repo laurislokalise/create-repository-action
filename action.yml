@@ -15,5 +15,5 @@ outputs:
   repo-id:
     description: 'GraphQL ID of newly created repository'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
